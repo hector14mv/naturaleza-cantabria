@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Naturaleza Cantabria · La Revilla</title>
+<meta name="description" content="Mapas interactivos de observaciones de fauna y flora alrededor de La Revilla (Cantabria), generados con datos de iNaturalist.">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; background: #f5f5f0; color: #222; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 60px; }
+  h1 { font-size: 28px; margin: 0 0 4px 0; letter-spacing: -0.5px; }
+  .sub { color: #666; font-size: 15px; margin: 0 0 32px 0; }
+  .card {
+    display: block;
+    background: white; border-radius: 14px; padding: 22px; margin-bottom: 16px;
+    text-decoration: none; color: inherit;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .card:hover, .card:active { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+  .card-title { font-size: 18px; font-weight: 600; margin: 0 0 4px 0; }
+  .card-meta { color: #777; font-size: 13px; margin-bottom: 8px; }
+  .card-desc { font-size: 14px; line-height: 1.5; color: #444; }
+  .badge {
+    display: inline-block; background: #e8f3e8; color: #1a6b1a;
+    padding: 2px 8px; border-radius: 100px; font-size: 11px; font-weight: 600;
+    margin-left: 6px; vertical-align: middle;
+  }
+  .badge.beta { background: #fff3cd; color: #806000; }
+  footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #888; line-height: 1.6; }
+  footer a { color: #1a73e8; text-decoration: none; }
+  .hero-emoji { font-size: 36px; line-height: 1; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero-emoji">🌿🦋🐦</div>
+  <h1>Naturaleza Cantabria</h1>
+  <p class="sub">Observaciones de fauna y flora alrededor de La Revilla (San Vicente de la Barquera) usando datos de iNaturalist.</p>
+
+  <a class="card" href="mapa-observaciones.html">
+    <div class="card-title">🗺️ Mapa principal — radio 30 km<span class="badge">211 pines</span></div>
+    <div class="card-meta">Centro: La Revilla · 96 especies seleccionadas</div>
+    <div class="card-desc">Mapa interactivo con observaciones de las especies "joya" de mayo (endemismos cantábricos, orquídeas, mariposas, herpetofauna, mamíferos…). Pines coloreados por categoría, con cluster automático y popups con enlace a Google Maps.</div>
+  </a>
+
+  <a class="card" href="mapa-ibio.html">
+    <div class="card-title">📡 Antenas de Ibio — radio 5 km<span class="badge">49 pines</span></div>
+    <div class="card-meta">Centro: 43.290, -4.145 · Cordal de brezal-pastizal a ~600 m</div>
+    <div class="card-desc">Todas las observaciones de cualquier grupo dentro de 5 km del punto, agrupadas por tipo (plantas, aves, insectos, hongos, anfibios…). Hábitat de víbora de Seoane, escribano cerillo y mariposas de pastizal.</div>
+  </a>
+
+  <a class="card" href="observaciones-cercanas.md">
+    <div class="card-title">📋 Tabla de observaciones</div>
+    <div class="card-meta">Markdown · 96 especies con número de obs, último avistamiento y enlaces a Maps</div>
+    <div class="card-desc">Vista en tabla del mapa principal. Cada fila tiene un botón 📍 Maps que abre Google Maps con las coordenadas exactas del último avistamiento.</div>
+  </a>
+
+  <footer>
+    <p>
+      Datos: <a href="https://www.inaturalist.org">iNaturalist</a> ·
+      Tiles: <a href="https://www.openstreetmap.org">OpenStreetMap</a> ·
+      Mapas con <a href="https://leafletjs.com">Leaflet</a>.
+    </p>
+    <p>
+      Excluyendo observaciones de @hectormoyano y @sergiovelez.
+      Calidad investigación únicamente. Generado automáticamente con un script Python que consulta la API pública de iNaturalist.
+    </p>
+  </footer>
+</div>
+</body>
+</html>

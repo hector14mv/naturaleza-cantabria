@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Antenas de Ibio — observaciones cercanas</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<style>
+  html, body { margin:0; padding:0; height:100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  #map { height: 100%; width: 100%; }
+  .leaflet-popup-content { margin: 12px 14px; min-width: 220px; }
+  .pop-sci { font-style: italic; font-weight: 600; font-size: 15px; line-height: 1.2; }
+  .pop-com { color: #555; font-size: 12px; margin: 2px 0 8px 0; }
+  .pop-meta { font-size: 12px; color: #444; margin: 3px 0; }
+  .pop-actions { margin-top: 10px; display: flex; gap: 10px; }
+  .pop-actions a { font-size: 13px; padding: 6px 10px; border-radius: 6px; text-decoration: none; background: #f0f0f0; color: #111; }
+  .pop-actions a.primary { background: #1a73e8; color: white; }
+  .info-pill {
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    background: rgba(255,255,255,0.96); padding: 6px 14px; border-radius: 100px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); font-size: 12px; z-index: 1000; font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div id="map">
+  <noscript>
+    <div style="padding:30px;font-size:16px;line-height:1.5;">
+      <strong>⚠️  JavaScript no se está ejecutando.</strong><br><br>
+      Si estás en iPhone, has abierto el archivo en el preview de <em>Files</em>.
+      Ábrelo en <strong>Safari</strong>: en Files, toca y mantén el archivo,
+      "Compartir" → "Copiar a Safari".
+    </div>
+  </noscript>
+  <div id="loading-msg" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;font-size:15px;color:#666;">
+    🗺️ Cargando mapa…<br><small>si persiste, abre en Safari</small>
+  </div>
+</div>
+<div class="info-pill">49 observaciones · radio 5 km · Antenas de Ibio</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+const observations = [{"iconic": "Plantae", "species": "Ilex aquifolium", "common": "European holly", "lat": 43.2626037598, "lng": -4.1219058037, "observed_on": "2025-10-19", "place": "Los Corrales de Buelna", "observer": "dlumpuy", "obs_id": 321806746}, {"iconic": "Fungi", "species": "Amanita excelsa", "common": "European False Blusher", "lat": 43.2621917725, "lng": -4.121491909, "observed_on": "2025-10-19", "place": "Los Corrales de Buelna", "observer": "dlumpuy", "obs_id": 321806475}, {"iconic": "Fungi", "species": "Clathrus archeri", "common": "devil's-fingers", "lat": 43.2671470642, "lng": -4.1160769463, "observed_on": "2025-10-19", "place": "Los Corrales de Buelna", "observer": "dlumpuy", "obs_id": 321801628}, {"iconic": "Aves", "species": "Emberiza citrinella", "common": "Yellowhammer", "lat": 43.2996065, "lng": -4.1789077, "observed_on": "2025-08-14", "place": "Cantabria, España", "observer": "mateo_espinosa", "obs_id": 307021059}, {"iconic": "Insecta", "species": "Arethusana arethusa", "common": "False Grayling", "lat": 43.2996, "lng": -4.1789, "observed_on": "2025-08-14", "place": "Herrera de Ibio, Cantabria, España", "observer": "mateo_espinosa", "obs_id": 307027273}, {"iconic": "Plantae", "species": "Lamium maculatum", "common": "Spotted deadnettle", "lat": 43.2759094238, "lng": -4.1090164185, "observed_on": "2024-10-09", "place": "Los Corrales de Buelna", "observer": "puddlejumper40", "obs_id": 246462803}, {"iconic": "Insecta", "species": "Acherontia atropos", "common": "Death's Head Hawkmoth", "lat": 43.2823524475, "lng": -4.111998558, "observed_on": "2024-10-08", "place": "Los Corrales de Buelna", "observer": "puddlejumper40", "obs_id": 246368663}, {"iconic": "Insecta", "species": "Selenia dentaria", "common": "Early Thorn", "lat": 43.2823486328, "lng": -4.1120629311, "observed_on": "2024-10-08", "place": "Los Corrales de Buelna", "observer": "puddlejumper40", "obs_id": 246299448}, {"iconic": "Amphibia", "species": "Bufo spinosus", "common": "Spiny Toad", "lat": 43.2823486328, "lng": -4.1120629311, "observed_on": "2024-10-07", "place": "Los Corrales de Buelna", "observer": "puddlejumper40", "obs_id": 246168179}, {"iconic": "Insecta", "species": "Milesia crabroniformis", "common": "", "lat": 43.2824029724, "lng": -4.1119951808, "observed_on": "2024-10-06", "place": "Los Corrales de Buelna, Cantabria, ES", "observer": "puddlejumper40", "obs_id": 245918290}, {"iconic": "Insecta", "species": "Pararge aegeria", "common": "Speckled Wood", "lat": 43.2822890315, "lng": -4.1119941368, "observed_on": "2024-10-06", "place": "Los Corrales de Buelna, Cantabria, ES", "observer": "puddlejumper40", "obs_id": 245914364}, {"iconic": "Insecta", "species": "Lymantrichneumon disparis", "common": "", "lat": 43.2823771959, "lng": -4.1119847724, "observed_on": "2024-10-06", "place": "Los Corrales de Buelna, Cantabria, ES", "observer": "puddlejumper40", "obs_id": 245914191}, {"iconic": "Plantae", "species": "Paspalum dilatatum", "common": "Dallis grass", "lat": 43.2746887207, "lng": -4.108716011, "observed_on": "2024-10-04", "place": "Los Corrales de Buelna", "observer": "puddlejumper40", "obs_id": 245540893}, {"iconic": "Plantae", "species": "Viscum album album", "common": "European Mistletoe", "lat": 43.280456543, "lng": -4.159142971, "observed_on": "2024-10-03", "place": "Cantabria, ES-CB, ES", "observer": "puddlejumper40", "obs_id": 245396344}, {"iconic": "Plantae", "species": "Mycelis muralis", "common": "Wall Lettuce", "lat": 43.2751159668, "lng": -4.116042614, "observed_on": "2024-10-03", "place": "Cantabria, ES-CB, ES", "observer": "puddlejumper40", "obs_id": 245396345}, {"iconic": "Plantae", "species": "Geranium robertianum", "common": "Herb Robert", "lat": 43.2746582031, "lng": -4.1083102226, "observed_on": "2024-10-03", "place": "Cantabria, ES-CB, ES", "observer": "puddlejumper40", "obs_id": 245396341}, {"iconic": "Mollusca", "species": "Helicella itala", "common": "Heath Snail", "lat": 43.2822885365, "lng": -4.1120260768, "observed_on": "2024-10-03", "place": "Barrio Coo-Barcena, Los Corrales de Buelna, Cantabria, ES", "observer": "puddlejumper40", "obs_id": 245360115}, {"iconic": "Fungi", "species": "Leotia lubrica", "common": "Ochre Jelly Club", "lat": 43.2711181639, "lng": -4.1357340811, "observed_on": "2024-08-07", "place": "39400 Los Corrales de Buelna, Cantabria, España", "observer": "luisgorrizhuarte", "obs_id": 234416132}, {"iconic": "Plantae", "species": "Plagiothecium undulatum", "common": "Waved Silk-moss", "lat": 43.259384155, "lng": -4.1370010375, "observed_on": "2024-08-07", "place": "39400 Los Corrales de Buelna, Cantabria, España", "observer": "luisgorrizhuarte", "obs_id": 234555948}, {"iconic": "Plantae", "species": "Frangula alnus", "common": "alder buckthorn", "lat": 43.2600250242, "lng": -4.1287922858, "observed_on": "2024-08-07", "place": "39400 Los Corrales de Buelna, Cantabria, España", "observer": "luisgorrizhuarte", "obs_id": 234370433}, {"iconic": "Fungi", "species": "Clathrus archeri", "common": "devil's-fingers", "lat": 43.2660827636, "lng": -4.1185040472, "observed_on": "2024-08-07", "place": "39400 Los Corrales de Buelna, Cantabria, España", "observer": "luisgorrizhuarte", "obs_id": 234416792}, {"iconic": "Fungi", "species": "Guepiniopsis buccina", "common": "Trumpet Jelly Cup", "lat": 43.2661857603, "lng": -4.1176166533, "observed_on": "2024-08-07", "place": "39400 Los Corrales de Buelna, Cantabria, España", "observer": "luisgorrizhuarte", "obs_id": 234417404}, {"iconic": "Plantae", "species": "Struthiopteris spicant", "common": "deer fern", "lat": 43.2713317869, "lng": -4.1142024992, "observed_on": "2024-08-07", "place": "39400 Los Corrales de Buelna, Cantabria, España", "observer": "luisgorrizhuarte", "obs_id": 234418535}, {"iconic": "Plantae", "species": "Zantedeschia aethiopica", "common": "calla lily", "lat": 43.2737884519, "lng": -4.1105117797, "observed_on": "2024-08-07", "place": "39408 Los Corrales de Buelna, Cantabria, España", "observer": "luisgorrizhuarte", "obs_id": 234367062}, {"iconic": "Aves", "species": "Anthus spinoletta", "common": "Water Pipit", "lat": 43.2906580474, "lng": -4.1427718305, "observed_on": "2023-06-18", "place": "Mazcuerras, Cantabria, ES", "observer": "adriee", "obs_id": 168827452}, {"iconic": "Insecta", "species": "Bombus pascuorum", "common": "Common Carder Bumble Bee", "lat": 43.27652034, "lng": -4.169351514, "observed_on": "2023-04-09", "place": "Mazcuerras, Cantabria, ES", "observer": "maria_crespom", "obs_id": 154142645}, {"iconic": "Aves", "species": "Turdus philomelos", "common": "Song Thrush", "lat": 43.2804486406, "lng": -4.1706572944, "observed_on": "2023-04-09", "place": "Mazcuerras, Cantabria, ES", "observer": "maria_crespom", "obs_id": 154141249}, {"iconic": "Plantae", "species": "Lamium galeobdolon montanum", "common": "Mountain Yellow Archangel", "lat": 43.2733595346, "lng": -4.1128516219, "observed_on": "2022-04-09", "place": "Cantabria, España", "observer": "fernando481", "obs_id": 110888536}, {"iconic": "Plantae", "species": "Ficaria verna", "common": "lesser celandine", "lat": 43.273351723, "lng": -4.1127550624, "observed_on": "2022-04-09", "place": "Cantabria, España", "observer": "fernando481", "obs_id": 110888537}, {"iconic": "Insecta", "species": "Pieris napi", "common": "Green-veined White", "lat": 43.2732892304, "lng": -4.1124117396, "observed_on": "2022-04-09", "place": "Cantabria, España", "observer": "fernando481", "obs_id": 110888532}, {"iconic": "Insecta", "species": "Rhingia rostrata", "common": "Grey-backed Snout-hoverfly", "lat": 43.2729611429, "lng": -4.1132764825, "observed_on": "2022-04-09", "place": "Cantabria, España", "observer": "fernando481", "obs_id": 110888518}, {"iconic": "Insecta", "species": "Gastrophysa viridula", "common": "Green Dock Beetle", "lat": 43.2733999409, "lng": -4.1130940923, "observed_on": "2022-04-09", "place": "Cantabria, España", "observer": "fernando481", "obs_id": 110888514}, {"iconic": "Insecta", "species": "Episyrphus balteatus", "common": "Marmalade Hover Fly", "lat": 43.2733452599, "lng": -4.113051177, "observed_on": "2022-04-09", "place": "Cantabria, España", "observer": "fernando481", "obs_id": 110888512}, {"iconic": "Insecta", "species": "Lasius fuliginosus", "common": "Jet Ant", "lat": 43.2731807919, "lng": -4.112570524, "observed_on": "2022-04-09", "place": "Cantabria, España", "observer": "fernando481", "obs_id": 110888498}, {"iconic": "Plantae", "species": "Silene dioica", "common": "red campion", "lat": 43.2730550481, "lng": -4.1129353044, "observed_on": "2022-04-09", "place": "Cantabria, España", "observer": "fernando481", "obs_id": 110888499}, {"iconic": "Aves", "species": "Saxicola rubicola", "common": "European Stonechat", "lat": 43.3198368977, "lng": -4.1348472961, "observed_on": "2021-08-09", "place": "Cantabria, Espanha", "observer": "luisavespires", "obs_id": 287337426}, {"iconic": "Insecta", "species": "Hydrometra stagnorum", "common": "Common Water Measurer", "lat": 43.273647584, "lng": -4.1123191507, "observed_on": "2021-04-03", "place": "Cantabria, España", "observer": "fernando481", "obs_id": 72817522}, {"iconic": "Mollusca", "species": "Ancylus fluviatilis", "common": "River Limpet", "lat": 43.2735871666, "lng": -4.1123350763, "observed_on": "2021-04-03", "place": "Cantabria, España", "observer": "fernando481", "obs_id": 72817517}, {"iconic": "Insecta", "species": "Lasius fuliginosus", "common": "Jet Ant", "lat": 43.2734044595, "lng": -4.1123066617, "observed_on": "2021-04-03", "place": "Cantabria, España", "observer": "fernando481", "obs_id": 72817514}, {"iconic": "Arachnida", "species": "Araneus diadematus", "common": "Cross Orbweaver", "lat": 43.3156266667, "lng": -4.1715466667, "observed_on": "2018-10-14", "place": "Diseminado Ibio, 12, 39509 Mazcuerras, Cantabria, España", "observer": "rodrigocerocero", "obs_id": 17491254}, {"iconic": "Insecta", "species": "Copris lunaris", "common": "", "lat": 43.315795, "lng": -4.1715366667, "observed_on": "2018-10-13", "place": "Lugar Barrio Ibio, 67, 39509, Cantabria, España", "observer": "rodrigocerocero", "obs_id": 17475162}, {"iconic": "Amphibia", "species": "Bufo spinosus", "common": "Spiny Toad", "lat": 43.3157216667, "lng": -4.1715083333, "observed_on": "2018-10-13", "place": "Lugar Barrio Ibio, 67, 39509, Cantabria, España", "observer": "rodrigocerocero", "obs_id": 17473551}, {"iconic": "Aves", "species": "Turdus merula", "common": "Eurasian Blackbird", "lat": 43.3022380468, "lng": -4.179926377, "observed_on": "2018-07-11", "place": "Lugar Barrio Herrera de Ibio, 8, Mazcuerras, Cantabria, ES", "observer": "mhaces", "obs_id": 18017945}, {"iconic": "Aves", "species": "Buteo buteo", "common": "Common Buzzard", "lat": 43.3240503165, "lng": -4.1700860338, "observed_on": "2017-07-29", "place": "Autovía del Cantábrico, Mazcuerras, Cantabria, ES", "observer": "juan132", "obs_id": 9538396}, {"iconic": "Mammalia", "species": "Erinaceus europaeus", "common": "Common Hedgehog", "lat": 43.31104901, "lng": -4.1745079192, "observed_on": "2016-07-04", "place": "Diseminado Ibio, 10 39509 Mazcuerras Cantabria", "observer": "ckorange", "obs_id": 3622176}, {"iconic": "Aves", "species": "Buteo buteo", "common": "Common Buzzard", "lat": 43.3020793799, "lng": -4.16015625, "observed_on": "2015-05-10", "place": "Cantabria, Spanje", "observer": "erikneuteboom", "obs_id": 68157202}, {"iconic": "Amphibia", "species": "Rana iberica", "common": "Iberian Frog", "lat": 43.2793505648, "lng": -4.1806475058, "observed_on": "2014-07-15", "place": "Cantabria, ES-CB, ES", "observer": "sebastian-voitel", "obs_id": 227304141}, {"iconic": "Amphibia", "species": "Bufo spinosus", "common": "Spiny Toad", "lat": 43.2701303499, "lng": -4.1148637242, "observed_on": "2004-07-12", "place": "Cantabria, España", "observer": "angelobregonsierra", "obs_id": 63918660}, {"iconic": "Insecta", "species": "Carabus purpurascens", "common": "", "lat": 43.2764281049, "lng": -4.0946590596, "observed_on": "1978-07-23", "place": "Cantabria, ES-CB, ES", "observer": "gbohne", "obs_id": 106089803}];
+const colors = {"Plantae": "#198754", "Aves": "#0d6efd", "Insecta": "#ffc107", "Reptilia": "#a52a2a", "Amphibia": "#20c997", "Mammalia": "#495057", "Fungi": "#7e3f9c", "Mollusca": "#fd7e14", "Arachnida": "#d63384", "Animalia": "#888", "Actinopterygii": "#0dcaf0", "Protozoa": "#999", "Chromista": "#888"};
+const labels = {"Plantae": "Plantas 🌿", "Aves": "Aves 🐦", "Insecta": "Insectos 🦋", "Reptilia": "Reptiles 🦎", "Amphibia": "Anfibios 🐸", "Mammalia": "Mamíferos 🦊", "Fungi": "Hongos 🍄", "Mollusca": "Moluscos 🐌", "Arachnida": "Arácnidos 🕷️", "Animalia": "Otros animales", "Actinopterygii": "Peces"};
+
+document.getElementById('loading-msg')?.remove();
+
+const map = L.map('map').setView([43.2901147, -4.1448273], 14);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  maxZoom: 19
+}).addTo(map);
+
+L.circle([43.2901147, -4.1448273], {
+  radius: 5 * 1000, color:'#222', weight:1, fillOpacity:0.04
+}).addTo(map);
+L.circleMarker([43.2901147, -4.1448273], {
+  radius: 9, color:'#222', weight:2, fillColor:'#ffeb3b', fillOpacity:1
+}).addTo(map).bindPopup('<b>Antenas de Ibio</b>').openPopup();
+
+const layers = {};
+for (const k of Object.keys(colors)) {
+  layers[k] = L.markerClusterGroup({ disableClusteringAtZoom: 15, maxClusterRadius: 40 });
+}
+
+function escapeHtml(s) { return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+observations.forEach(o => {
+  const color = colors[o.iconic] || '#888';
+  const icon = L.divIcon({
+    html: `<div style="background:${color};width:14px;height:14px;border-radius:50%;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.6);"></div>`,
+    iconSize:[14,14], iconAnchor:[7,7], className:''
+  });
+  const m = L.marker([o.lat, o.lng], { icon });
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${o.lat},${o.lng}`;
+  const inatUrl = `https://www.inaturalist.org/observations/${o.obs_id}`;
+  m.bindPopup(`
+    <div class="pop-sci">${escapeHtml(o.species)}</div>
+    ${o.common ? `<div class="pop-com">${escapeHtml(o.common)}</div>` : ''}
+    <div class="pop-meta">📅 ${escapeHtml(o.observed_on || 's/f')} · 👤 @${escapeHtml(o.observer)}</div>
+    ${o.place ? `<div class="pop-meta">📌 ${escapeHtml(o.place)}</div>` : ''}
+    <div class="pop-meta" style="color:#888;font-size:11px;">${escapeHtml(o.iconic)}</div>
+    <div class="pop-actions">
+      <a class="primary" href="${mapsUrl}" target="_blank">📍 Cómo llegar</a>
+      <a href="${inatUrl}" target="_blank">iNat</a>
+    </div>
+  `);
+  if (layers[o.iconic]) layers[o.iconic].addLayer(m);
+});
+
+for (const lg of Object.values(layers)) lg.addTo(map);
+
+const overlays = {};
+for (const [k, lg] of Object.entries(layers)) {
+  const count = observations.filter(o => o.iconic === k).length;
+  if (count === 0) continue;
+  const dot = `<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${colors[k]};border:2px solid white;box-shadow:0 0 2px rgba(0,0,0,0.4);margin-right:4px;"></span>`;
+  overlays[`${dot} ${labels[k] || k} (${count})`] = lg;
+}
+L.control.layers(null, overlays, { collapsed: true, position: 'topright' }).addTo(map);
+
+if (observations.length > 0) {
+  const bounds = L.latLngBounds(observations.map(o => [o.lat, o.lng]));
+  bounds.extend([43.2901147, -4.1448273]);
+  map.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
+}
+</script>
+</body>
+</html>
