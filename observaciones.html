@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Observaciones — La Revilla</title>
+<style>
+  :root {
+    --bg: #f5f5f0;
+    --card: #ffffff;
+    --text: #222;
+    --muted: #777;
+    --border: rgba(0,0,0,0.08);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; background: var(--bg); color: var(--text); -webkit-text-size-adjust: 100%; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 16px 14px 80px; }
+
+  .top { position: sticky; top: 0; background: var(--bg); padding: 10px 0 10px; z-index: 10; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+  h1 { margin: 0 0 2px 0; font-size: 22px; letter-spacing: -0.4px; }
+  .meta { color: var(--muted); font-size: 12px; margin: 0 0 10px 0; }
+  #search { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 12px; font-size: 16px; background: white; -webkit-appearance: none; }
+  #search:focus { outline: 2px solid #1a73e8; }
+
+  .cat { background: var(--card); border-radius: 14px; margin-bottom: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid var(--border); }
+  .cat-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; cursor: pointer; user-select: none; border-left: 4px solid var(--cat-color, #888); }
+  .cat-emoji { font-size: 18px; }
+  .cat-head h2 { margin: 0; font-size: 15px; font-weight: 600; flex: 1; line-height: 1.3; }
+  .cat-stats { color: var(--muted); font-size: 12px; white-space: nowrap; }
+  .cat-toggle { color: var(--muted); transition: transform 0.2s; margin-left: 4px; }
+  .cat.collapsed .cat-toggle { transform: rotate(-90deg); }
+  .cat.collapsed .cat-body { display: none; }
+
+  .cat-body { padding: 0; }
+  .sp { padding: 12px 16px; border-top: 1px solid var(--border); }
+  .sp:first-child { border-top: none; }
+  .sp-head { display: flex; align-items: flex-start; gap: 10px; }
+  .sp-name { flex: 1; min-width: 0; }
+  .sci { font-style: italic; font-weight: 600; font-size: 15px; line-height: 1.3; display: block; }
+  .com { color: var(--muted); font-size: 12.5px; }
+  .badge { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; height: 26px; padding: 0 8px; border-radius: 13px; font-size: 13px; font-weight: 700; }
+  .badge-zero { background: #f0f0f0; color: #999; }
+  .badge-low { background: #ffe4e1; color: #b25b5b; }
+  .badge-mid { background: #fff3cd; color: #806000; }
+  .badge-high { background: #d4edda; color: #1a6b1a; }
+  .last { color: var(--muted); font-size: 12.5px; margin-top: 4px; }
+  .last .place { display: inline-block; max-width: 100%; }
+  .actions { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .btn { font-size: 13px; padding: 6px 12px; border-radius: 100px; text-decoration: none; background: #f0f0f0; color: #111; border: 1px solid transparent; }
+  .btn:active, .btn:hover { background: #e4e4e4; }
+  .btn-primary { background: #1a73e8; color: white; }
+  .btn-primary:active, .btn-primary:hover { background: #1557b0; }
+
+  .empty-state { text-align: center; padding: 40px; color: var(--muted); }
+  footer { margin-top: 24px; font-size: 11.5px; color: var(--muted); line-height: 1.6; text-align: center; padding: 20px 10px 0; }
+  footer a { color: #1a73e8; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>🗒️ Observaciones</h1>
+    <p class="meta">Radio 30 km · La Revilla · excluyendo @hectormoyano, @sergiovelez · generado 2026-05-06 23:52</p>
+    <input id="search" type="search" placeholder="Buscar especie o nombre común…" autocomplete="off">
+  </div>
+
+  <div id="results">
+    <section class="cat" data-category="Flora — Endemismos cantábricos">
+  <header class="cat-head" style="--cat-color: #7e3f9c">
+    <span class="cat-emoji">🌿</span>
+    <h2>Flora — Endemismos cantábricos</h2>
+    <span class="cat-stats">6 sp · 148 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="daboecia cantabrica st. dabeoc&#39;s heath">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Daboecia cantabrica</span>
+      <span class="com">St. Dabeoc&#39;s heath</span>
+    </div>
+    <div class="badge badge-high">121</div>
+  </div>
+  <div class="last">📅 hace 9 d · 2026-04-27 <span class="place">· San pelayo s/n, 39587, Cantabria, Espanha</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.1498946012,-4.6540138498" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/355677288" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/371651" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=371651&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="genista legionensis ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Genista legionensis</span>
+      
+    </div>
+    <div class="badge badge-mid">19</div>
+  </div>
+  <div class="last">📅 hace 9 d · 2026-04-27 <span class="place">· 33554, Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2398861111,-4.7426555556" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/355394288" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/1499177" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=1499177&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="iris latifolia english iris">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Iris latifolia</span>
+      <span class="com">English Iris</span>
+    </div>
+    <div class="badge badge-mid">8</div>
+  </div>
+  <div class="last">📅 hace 10 m · 2025-07-03 <span class="place">· 33554 Tresviso, Cantabria, Španělsko</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2327647862,-4.7698117622" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/295671328" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/243782" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=243782&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="armeria pubigera ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Armeria pubigera</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/906543" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=906543&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="petrocoptis pyrenaica ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Petrocoptis pyrenaica</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/953468" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=953468&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="soldanella villosa ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Soldanella villosa</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/443819" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=443819&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+<section class="cat" data-category="Flora — Orquídeas">
+  <header class="cat-head" style="--cat-color: #d63384">
+    <span class="cat-emoji">🌸</span>
+    <h2>Flora — Orquídeas</h2>
+    <span class="cat-stats">12 sp · 268 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="serapias cordigera heart-flowered serapias">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Serapias cordigera</span>
+      <span class="com">Heart-flowered serapias</span>
+    </div>
+    <div class="badge badge-high">69</div>
+  </div>
+  <div class="last">📅 hace 6 d · 2026-04-30 <span class="place">· praia</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.4162640021,-4.7784767698" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/358987714" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/341172" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=341172&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="orchis mascula early purple orchid">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Orchis mascula</span>
+      <span class="com">Early Purple Orchid</span>
+    </div>
+    <div class="badge badge-high">64</div>
+  </div>
+  <div class="last">📅 hace 9 d · 2026-04-27 <span class="place">· 33554, Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2312666667,-4.7367222222" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/355414373" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/132621" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=132621&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="ophrys apifera bee orchid">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Ophrys apifera</span>
+      <span class="com">Bee Orchid</span>
+    </div>
+    <div class="badge badge-high">61</div>
+  </div>
+  <div class="last">📅 hace 10 m · 2025-07-05 <span class="place">· El Parque Nacional de los Picos de Europa, Cabrales, Asturias, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2381151209,-4.8237947549" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/295625154" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/83816" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=83816&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="serapias lingua tongue orchid">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Serapias lingua</span>
+      <span class="com">Tongue Orchid</span>
+    </div>
+    <div class="badge badge-mid">21</div>
+  </div>
+  <div class="last">📅 hace 11 m · 2025-06-02 <span class="place">· 33554 Tresviso, Cantabria, Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.255581873,-4.6684773266" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/286310177" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/203000" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=203000&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="ophrys insectifera ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Ophrys insectifera</span>
+      
+    </div>
+    <div class="badge badge-mid">15</div>
+  </div>
+  <div class="last">📅 hace 11 m · 2025-05-31 <span class="place">· Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2972225638,-4.6215059672" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/286239518" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/57468" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=57468&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="dactylorhiza elata robust marsh-orchid">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Dactylorhiza elata</span>
+      <span class="com">Robust Marsh-orchid</span>
+    </div>
+    <div class="badge badge-mid">10</div>
+  </div>
+  <div class="last">📅 hace 11 m · 2025-06-10 <span class="place">· Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3837845919,-4.6557952224" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/302312775" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/209319" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=209319&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="cephalanthera longifolia narrow-leaved helleborine">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Cephalanthera longifolia</span>
+      <span class="com">Narrow-leaved Helleborine</span>
+    </div>
+    <div class="badge badge-mid">9</div>
+  </div>
+  <div class="last">📅 hace 11 m · 2025-05-24 <span class="place">· Parque Nacional Picos de Europa, Cabrales, Asturies, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.231225,-4.7586866667" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/283712988" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/57470" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=57470&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="limodorum abortivum violet bird&#39;s-nest">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Limodorum abortivum</span>
+      <span class="com">Violet Bird&#39;s-nest</span>
+    </div>
+    <div class="badge badge-mid">8</div>
+  </div>
+  <div class="last">📅 hace 11 m · 2025-05-18 <span class="place">· Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3439868843,-4.7802880695" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/282329062" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/128137" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=128137&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="anacamptis morio green-winged orchid">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Anacamptis morio</span>
+      <span class="com">green-winged orchid</span>
+    </div>
+    <div class="badge badge-low">4</div>
+  </div>
+  <div class="last">📅 hace 1 a · 2024-05-08 <span class="place">· 39553, Cantabria, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.28025,-4.4299444444" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/214607204" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/59318" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=59318&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="epipactis palustris marsh helleborine">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Epipactis palustris</span>
+      <span class="com">Marsh Helleborine</span>
+    </div>
+    <div class="badge badge-low">3</div>
+  </div>
+  <div class="last">📅 hace 1 a · 2024-07-21 <span class="place">· Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3324589342,-4.7283335344" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/230944541" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/56233" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=56233&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="serapias parviflora lesser tongue-orchid">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Serapias parviflora</span>
+      <span class="com">Lesser Tongue-orchid</span>
+    </div>
+    <div class="badge badge-low">3</div>
+  </div>
+  <div class="last">📅 hace 11 m · 2025-05-18 <span class="place">· Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2879002519,-4.6254820162" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/282329088" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/243620" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=243620&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="ophrys lutea yellow bee-orchid">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Ophrys lutea</span>
+      <span class="com">Yellow Bee-orchid</span>
+    </div>
+    <div class="badge badge-low">1</div>
+  </div>
+  <div class="last">📅 hace 2 a · 2023-05-08 <span class="place">· Principado de Asturias, ES-AS-AS, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2525258628,-4.7567829116" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/249404523" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/59339" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=59339&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+<section class="cat" data-category="Flora — Plantas carnívoras">
+  <header class="cat-head" style="--cat-color: #198754">
+    <span class="cat-emoji">🪤</span>
+    <h2>Flora — Plantas carnívoras</h2>
+    <span class="cat-stats">2 sp · 73 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="pinguicula grandiflora ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Pinguicula grandiflora</span>
+      
+    </div>
+    <div class="badge badge-high">56</div>
+  </div>
+  <div class="last">📅 hace 24 d · 2026-04-12 <span class="place">· Camaleño, Cantabria, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.1774783333,-4.700825" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/349213291" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/325579" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=325579&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="drosera rotundifolia round-leaved sundew">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Drosera rotundifolia</span>
+      <span class="com">round-leaved sundew</span>
+    </div>
+    <div class="badge badge-mid">17</div>
+  </div>
+  <div class="last">📅 hace 9 m · 2025-07-27 <span class="place">· Parque Nacional de la Montaña de Covadonga, Principado de Asturias, Asturias, Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2874697997,-4.7126754" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/302303995" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/52658" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=52658&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+<section class="cat" data-category="Flora — Lirios y prado">
+  <header class="cat-head" style="--cat-color: #fd7e14">
+    <span class="cat-emoji">🌼</span>
+    <h2>Flora — Lirios y prado</h2>
+    <span class="cat-stats">4 sp · 86 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="aquilegia vulgaris common columbine">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Aquilegia vulgaris</span>
+      <span class="com">common columbine</span>
+    </div>
+    <div class="badge badge-high">43</div>
+  </div>
+  <div class="last">📅 hace 10 d · 2026-04-26 <span class="place">· Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.318477,-4.568822" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/354653350" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/51807" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=51807&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="digitalis purpurea purple foxglove">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Digitalis purpurea</span>
+      <span class="com">purple foxglove</span>
+    </div>
+    <div class="badge badge-mid">20</div>
+  </div>
+  <div class="last">📅 hace 10 d · 2026-04-26 <span class="place">· Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3172789722,-4.5685949722" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/354653370" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/53983" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=53983&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="lilium pyrenaicum pyrenean lily">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Lilium pyrenaicum</span>
+      <span class="com">Pyrenean Lily</span>
+    </div>
+    <div class="badge badge-mid">13</div>
+  </div>
+  <div class="last">📅 hace 10 m · 2025-06-28 <span class="place">· Parque Nacional de la Montaña de Covadonga, Principado de Asturias, Asturias, Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2727781997,-4.6497" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/298090201" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/207716" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=207716&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="lilium martagon martagon lily">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Lilium martagon</span>
+      <span class="com">Martagon Lily</span>
+    </div>
+    <div class="badge badge-mid">10</div>
+  </div>
+  <div class="last">📅 hace 1 a · 2024-07-21 <span class="place">· Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2298615214,-4.7484252201" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/230944524" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/85027" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=85027&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+<section class="cat" data-category="Flora — Costera">
+  <header class="cat-head" style="--cat-color: #0dcaf0">
+    <span class="cat-emoji">🌊</span>
+    <h2>Flora — Costera</h2>
+    <span class="cat-stats">5 sp · 115 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="crithmum maritimum rock samphire">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Crithmum maritimum</span>
+      <span class="com">rock samphire</span>
+    </div>
+    <div class="badge badge-high">101</div>
+  </div>
+  <div class="last">📅 hace 1 m · 2026-03-31 <span class="place">· Alfoz de Lloredo, Cantabria, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3994633333,-4.1989366667" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/346392588" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/82602" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=82602&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="honckenya peploides sea sandwort">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Honckenya peploides</span>
+      <span class="com">Sea Sandwort</span>
+    </div>
+    <div class="badge badge-mid">7</div>
+  </div>
+  <div class="last">📅 hace 6 m · 2025-10-15 <span class="place">· Lugar Naves, Llanes, Asturias, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.4427833333,-4.876595" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/321394725" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/129446" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=129446&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="calystegia soldanella sea bindweed">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Calystegia soldanella</span>
+      <span class="com">Sea Bindweed</span>
+    </div>
+    <div class="badge badge-low">3</div>
+  </div>
+  <div class="last">📅 hace 10 m · 2025-06-20 <span class="place">· Ribadedeva, Asturias, Espagne</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3914764549,-4.5789938048" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/291182288" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/60880" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=60880&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="eryngium maritimum sea holly">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Eryngium maritimum</span>
+      <span class="com">Sea Holly</span>
+    </div>
+    <div class="badge badge-low">3</div>
+  </div>
+  <div class="last">📅 hace 8 m · 2025-08-24 <span class="place">· Cantabria, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3898015109,-4.3832175366" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/309058158" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/162707" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=162707&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="pancratium maritimum sea daffodil">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Pancratium maritimum</span>
+      <span class="com">Sea Daffodil</span>
+    </div>
+    <div class="badge badge-low">1</div>
+  </div>
+  <div class="last">📅 hace 5 a · 2020-12-25 <span class="place">· Playa de Oyambre, Cantabria, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3888247222,-4.3255163889" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/67256268" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/78334" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=78334&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+<section class="cat" data-category="Aves — estivales y bosque">
+  <header class="cat-head" style="--cat-color: #0d6efd">
+    <span class="cat-emoji">🌳</span>
+    <h2>Aves — estivales y bosque</h2>
+    <span class="cat-stats">8 sp · 37 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="ficedula hypoleuca european pied flycatcher">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Ficedula hypoleuca</span>
+      <span class="com">European Pied Flycatcher</span>
+    </div>
+    <div class="badge badge-mid">11</div>
+  </div>
+  <div class="last">📅 hace 7 m · 2025-09-15 <span class="place">· Comillas, Cantabria, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3865433275,-4.2923223227" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/314634384" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/204512" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=204512&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="lanius collurio red-backed shrike">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Lanius collurio</span>
+      <span class="com">Red-backed Shrike</span>
+    </div>
+    <div class="badge badge-mid">8</div>
+  </div>
+  <div class="last">📅 hace 9 m · 2025-07-18 <span class="place">· Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3939174629,-4.6143829457" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/317727004" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/12038" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=12038&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="pernis apivorus european honey-buzzard">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Pernis apivorus</span>
+      <span class="com">European Honey-buzzard</span>
+    </div>
+    <div class="badge badge-mid">5</div>
+  </div>
+  <div class="last">📅 hace 1 a · 2024-08-10 <span class="place">· Peñarrubia, Cantabria, Espanha</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2367666667,-4.5525966667" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/236394020" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/5325" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=5325&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="dendrocoptes medius middle spotted woodpecker">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Dendrocoptes medius</span>
+      <span class="com">Middle Spotted Woodpecker</span>
+    </div>
+    <div class="badge badge-low">4</div>
+  </div>
+  <div class="last">📅 hace 1 a · 2024-06-28 <span class="place">· Cantabria, Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.1537665834,-4.558528971" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/226174368" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/792985" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=792985&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="dryocopus martius black woodpecker">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Dryocopus martius</span>
+      <span class="com">Black Woodpecker</span>
+    </div>
+    <div class="badge badge-low">4</div>
+  </div>
+  <div class="last">📅 hace 3 m · 2026-01-10 <span class="place">· 39592 La Plaza, Cantabria, Spanje</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3088361255,-4.317500554" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/334218028" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/17835" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=17835&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="cuculus canorus common cuckoo">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Cuculus canorus</span>
+      <span class="com">Common Cuckoo</span>
+    </div>
+    <div class="badge badge-low">3</div>
+  </div>
+  <div class="last">📅 hace 3 a · 2022-07-08 <span class="place">· Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3603029387,-4.848159148" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/141874115" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/1907" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=1907&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="upupa epops common hoopoe">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Upupa epops</span>
+      <span class="com">Common Hoopoe</span>
+    </div>
+    <div class="badge badge-low">2</div>
+  </div>
+  <div class="last">📅 hace 2 a · 2023-08-19 <span class="place">· 39547 San Vicente de la Barquera, Cantabria, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3939399717,-4.3369092939" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/179139640" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/20969" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=20969&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="oriolus oriolus ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Oriolus oriolus</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/204556" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=204556&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+<section class="cat" data-category="Aves — marismas / costa">
+  <header class="cat-head" style="--cat-color: #20c997">
+    <span class="cat-emoji">🦆</span>
+    <h2>Aves — marismas / costa</h2>
+    <span class="cat-stats">5 sp · 40 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="gulosus aristotelis european shag">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Gulosus aristotelis</span>
+      <span class="com">European Shag</span>
+    </div>
+    <div class="badge badge-mid">23</div>
+  </div>
+  <div class="last">📅 hace 6 m · 2025-11-02 <span class="place">· 39540 San Vicente de la Barquera, Cantabria, Spanien</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3861344,-4.3981007997" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/324525844" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/1289604" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=1289604&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="alcedo atthis common kingfisher">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Alcedo atthis</span>
+      <span class="com">Common Kingfisher</span>
+    </div>
+    <div class="badge badge-mid">7</div>
+  </div>
+  <div class="last">📅 hace 4 m · 2026-01-06 <span class="place">· Ribadedeva, Asturias, Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3918285099,-4.5794484392" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/333744291" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/2599" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=2599&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="falco peregrinus peregrine falcon">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Falco peregrinus</span>
+      <span class="com">Peregrine Falcon</span>
+    </div>
+    <div class="badge badge-mid">5</div>
+  </div>
+  <div class="last">📅 hace 1 a · 2024-06-26 <span class="place">· Llanes, Asturias, Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.4249776294,-4.7573338785" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/226192066" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/4647" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=4647&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="platalea leucorodia eurasian spoonbill">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Platalea leucorodia</span>
+      <span class="com">Eurasian Spoonbill</span>
+    </div>
+    <div class="badge badge-mid">5</div>
+  </div>
+  <div class="last">📅 hace 2 a · 2023-12-22 <span class="place">· Cantabria, Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3862824424,-4.3999780656" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/194666375" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/3731" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=3731&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="ardea purpurea ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Ardea purpurea</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/4951" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=4951&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+<section class="cat" data-category="Aves — alta montaña">
+  <header class="cat-head" style="--cat-color: #6f42c1">
+    <span class="cat-emoji">⛰️</span>
+    <h2>Aves — alta montaña</h2>
+    <span class="cat-stats">8 sp · 285 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="gyps fulvus eurasian griffon">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Gyps fulvus</span>
+      <span class="com">Eurasian Griffon</span>
+    </div>
+    <div class="badge badge-high">165</div>
+  </div>
+  <div class="last">📅 hace 1 m · 2026-04-02 <span class="place">· 39570 Potes, Cantabria, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.1568256195,-4.6214964241" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/346849823" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/5366" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=5366&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="pyrrhocorax pyrrhocorax red-billed chough">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Pyrrhocorax pyrrhocorax</span>
+      <span class="com">Red-billed Chough</span>
+    </div>
+    <div class="badge badge-high">47</div>
+  </div>
+  <div class="last">📅 hace 1 m · 2026-03-31 <span class="place">· Llanes, Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.4253159048,-4.758077699" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/348069201" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/8349" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=8349&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="neophron percnopterus egyptian vulture">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Neophron percnopterus</span>
+      <span class="com">Egyptian Vulture</span>
+    </div>
+    <div class="badge badge-high">32</div>
+  </div>
+  <div class="last">📅 hace 8 m · 2025-08-25 <span class="place">· Principado de Asturias, ES-AS-AS, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3743686148,-4.8544701094" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/309739861" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/5361" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=5361&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="pyrrhocorax graculus yellow-billed chough">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Pyrrhocorax graculus</span>
+      <span class="com">Yellow-billed Chough</span>
+    </div>
+    <div class="badge badge-mid">19</div>
+  </div>
+  <div class="last">📅 hace 6 m · 2025-10-16 <span class="place">· Asturias, Espagne</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2141647777,-4.815696347" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/339545311" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/8350" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=8350&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="gypaetus barbatus eurasian bearded vulture">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Gypaetus barbatus</span>
+      <span class="com">Eurasian Bearded Vulture</span>
+    </div>
+    <div class="badge badge-mid">13</div>
+  </div>
+  <div class="last">📅 hace 8 d · 2026-04-28 <span class="place">· 33554, Asturias, Espanha</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2271023,-4.79267" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/358975013" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/5379" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=5379&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="monticola saxatilis rufous-tailed rock-thrush">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Monticola saxatilis</span>
+      <span class="com">Rufous-tailed Rock-Thrush</span>
+    </div>
+    <div class="badge badge-low">4</div>
+  </div>
+  <div class="last">📅 hace 1 a · 2024-08-09 <span class="place">· Cantabria, Spanje</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.1411673075,-4.5908675594" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/235684474" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/13140" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=13140&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="aquila chrysaetos golden eagle">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Aquila chrysaetos</span>
+      <span class="com">Golden Eagle</span>
+    </div>
+    <div class="badge badge-low">3</div>
+  </div>
+  <div class="last">📅 hace 1 a · 2025-02-28 <span class="place">· Parque Nacional de la Montaña de Covadonga, Principado de Asturias, Asturias, Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.234775,-4.817175" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/268203402" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/5074" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=5074&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="tichodroma muraria wallcreeper">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Tichodroma muraria</span>
+      <span class="com">Wallcreeper</span>
+    </div>
+    <div class="badge badge-low">2</div>
+  </div>
+  <div class="last">📅 hace 3 a · 2023-04-27 <span class="place">· Cantabria, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.240576052,-4.5735812187" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/171257373" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/14840" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=14840&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+<section class="cat" data-category="Mariposas">
+  <header class="cat-head" style="--cat-color: #ffc107">
+    <span class="cat-emoji">🦋</span>
+    <h2>Mariposas</h2>
+    <span class="cat-stats">7 sp · 122 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="aglais io european peacock butterfly">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Aglais io</span>
+      <span class="com">European Peacock Butterfly</span>
+    </div>
+    <div class="badge badge-mid">29</div>
+  </div>
+  <div class="last">📅 hace 3 d · 2026-05-03 <span class="place">· Cobijón, Udías, Cantabria, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3394866667,-4.2401966667" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/358029901" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/207977" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=207977&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="papilio machaon old world swallowtail">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Papilio machaon</span>
+      <span class="com">Old World Swallowtail</span>
+    </div>
+    <div class="badge badge-mid">24</div>
+  </div>
+  <div class="last">📅 hace 8 d · 2026-04-28 <span class="place">· 33554, Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2118527778,-4.7621277778" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/356167638" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/56529" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=56529&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="polyommatus icarus common blue">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Polyommatus icarus</span>
+      <span class="com">Common Blue</span>
+    </div>
+    <div class="badge badge-mid">21</div>
+  </div>
+  <div class="last">📅 hace 1 m · 2026-04-06 <span class="place">· Cantabria, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.4030897824,-4.352256542" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/348173416" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/55641" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=55641&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="iphiclides feisthamelii iberian scarce swallowtail">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Iphiclides feisthamelii</span>
+      <span class="com">Iberian Scarce Swallowtail</span>
+    </div>
+    <div class="badge badge-mid">16</div>
+  </div>
+  <div class="last">📅 hace 10 d · 2026-04-26 <span class="place">· Barrio Turieno, Camaleño, Cantabria, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.1548388333,-4.633895" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/354004001" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/130391" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=130391&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="pieris napi green-veined white">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Pieris napi</span>
+      <span class="com">Green-veined White</span>
+    </div>
+    <div class="badge badge-mid">16</div>
+  </div>
+  <div class="last">📅 hace 10 m · 2025-07-10 <span class="place">· 33554 Tresviso, Cantabria, Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2328906029,-4.8106444627" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/296952190" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/54087" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=54087&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="anthocharis cardamines orange-tip">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Anthocharis cardamines</span>
+      <span class="com">orange-tip</span>
+    </div>
+    <div class="badge badge-mid">9</div>
+  </div>
+  <div class="last">📅 hace 7 d · 2026-04-29 <span class="place">· Tresviso, Cantabria, Espanha</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2661230738,-4.6342815086" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/357630579" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/51495" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=51495&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="issoria lathonia queen of spain fritillary">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Issoria lathonia</span>
+      <span class="com">Queen of Spain Fritillary</span>
+    </div>
+    <div class="badge badge-mid">7</div>
+  </div>
+  <div class="last">📅 hace 9 m · 2025-07-15 <span class="place">· Puente La Jaya, Río Cares, 33554, Asturias, Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2528782186,-4.8399408907" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/298175433" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/62766" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=62766&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+<section class="cat" data-category="Anfibios y reptiles">
+  <header class="cat-head" style="--cat-color: #198038">
+    <span class="cat-emoji">🦎</span>
+    <h2>Anfibios y reptiles</h2>
+    <span class="cat-stats">15 sp · 666 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="podarcis muralis common wall lizard">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Podarcis muralis</span>
+      <span class="com">Common Wall Lizard</span>
+    </div>
+    <div class="badge badge-high">310</div>
+  </div>
+  <div class="last">📅 hoy · 2026-05-06 <span class="place">· Parque Nacional de la Montaña de Covadonga, ES-AS, ES-AS-AS, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2353828284,-4.8195445154" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/358974562" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/55990" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=55990&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="lissotriton helveticus palmate newt">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Lissotriton helveticus</span>
+      <span class="com">Palmate Newt</span>
+    </div>
+    <div class="badge badge-high">75</div>
+  </div>
+  <div class="last">📅 hace 8 d · 2026-04-28 <span class="place">· 33554, Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2062972222,-4.7671416667" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/356175356" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/64377" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=64377&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="salamandra salamandra fire salamander">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Salamandra salamandra</span>
+      <span class="com">Fire Salamander</span>
+    </div>
+    <div class="badge badge-high">75</div>
+  </div>
+  <div class="last">📅 hace 4 d · 2026-05-02 <span class="place">· 33554, Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2148446339,-4.8028942198" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/358610971" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/27726" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=27726&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="alytes obstetricans common midwife toad">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Alytes obstetricans</span>
+      <span class="com">Common Midwife Toad</span>
+    </div>
+    <div class="badge badge-high">54</div>
+  </div>
+  <div class="last">📅 hace 7 d · 2026-04-29 <span class="place">· 39580 Bejes, Cantabria, Espanha</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2422609653,-4.6466495097" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/357617973" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/24473" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=24473&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="anguis fragilis common slowworm">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Anguis fragilis</span>
+      <span class="com">Common Slowworm</span>
+    </div>
+    <div class="badge badge-high">39</div>
+  </div>
+  <div class="last">📅 hace 10 d · 2026-04-26 <span class="place">· Cantabria, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2071126204,-4.6024372728" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/356441574" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/343021" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=343021&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="vipera seoanei seoane&#39;s viper">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Vipera seoanei</span>
+      <span class="com">Seoane&#39;s Viper</span>
+    </div>
+    <div class="badge badge-high">39</div>
+  </div>
+  <div class="last">📅 hace 10 d · 2026-04-26 <span class="place">· Principado de Asturias, ES-AS-AS, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2571549052,-4.8549103713" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/354716200" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/30917" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=30917&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="chioglossa lusitanica gold-striped salamander">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Chioglossa lusitanica</span>
+      <span class="com">Gold-striped salamander</span>
+    </div>
+    <div class="badge badge-mid">22</div>
+  </div>
+  <div class="last">📅 hace 1 m · 2026-03-28 <span class="place">· Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3038884788,-4.7314028711" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/345852181" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/27844" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=27844&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="lacerta schreiberi iberian emerald lizard">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Lacerta schreiberi</span>
+      <span class="com">Iberian Emerald Lizard</span>
+    </div>
+    <div class="badge badge-mid">18</div>
+  </div>
+  <div class="last">📅 hace 1 m · 2026-03-29 <span class="place">· [LLANES] Estación Bus Llanes [CTA 03547], Llanes, 33500 Llanes, Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.410157884,-4.7159671783" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/345996257" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/35868" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=35868&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="natrix astreptophora iberian grass snake">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Natrix astreptophora</span>
+      <span class="com">Iberian Grass Snake</span>
+    </div>
+    <div class="badge badge-mid">16</div>
+  </div>
+  <div class="last">📅 hace 10 d · 2026-04-26 <span class="place">· Cantabria, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.1553041991,-4.6365640246" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/356428288" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/966781" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=966781&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="triturus marmoratus marbled newt">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Triturus marmoratus</span>
+      <span class="com">Marbled Newt</span>
+    </div>
+    <div class="badge badge-mid">6</div>
+  </div>
+  <div class="last">📅 hace 1 m · 2026-03-12 <span class="place">· Potes, Cantabria, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.1709416667,-4.6266033333" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/342580014" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/27712" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=27712&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="natrix maura viperine snake">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Natrix maura</span>
+      <span class="com">Viperine Snake</span>
+    </div>
+    <div class="badge badge-mid">5</div>
+  </div>
+  <div class="last">📅 hace 8 m · 2025-08-12 <span class="place">· 39570 Potes, Cantabria, Espagne</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.1538781311,-4.6236884594" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/305753684" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/29351" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=29351&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="rana iberica iberian frog">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Rana iberica</span>
+      <span class="com">Iberian Frog</span>
+    </div>
+    <div class="badge badge-mid">5</div>
+  </div>
+  <div class="last">📅 hace 1 m · 2026-04-03 <span class="place">· Principado de Asturias, ES-AS-AS, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3848635509,-4.8216191565" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/347123916" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/25665" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=25665&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="hyla molleri iberian tree frog">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Hyla molleri</span>
+      <span class="com">Iberian Tree Frog</span>
+    </div>
+    <div class="badge badge-low">2</div>
+  </div>
+  <div class="last">📅 hace 1 a · 2024-08-08 <span class="place">· Pimiango, 33590 Ribadedeva, Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3880861111,-4.5410916667" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/316794595" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/70646" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=70646&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="discoglossus galganoi ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Discoglossus galganoi</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/24480" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=24480&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="podarcis bocagei ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Podarcis bocagei</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/35706" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=35706&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+<section class="cat" data-category="Hongos primaverales">
+  <header class="cat-head" style="--cat-color: #a52a2a">
+    <span class="cat-emoji">🍄</span>
+    <h2>Hongos primaverales</h2>
+    <span class="cat-stats">6 sp · 0 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="calocybe gambosa ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Calocybe gambosa</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/450829" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=450829&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="gyromitra esculenta ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Gyromitra esculenta</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/85120" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=85120&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="morchella elata ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Morchella elata</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/1467061" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=1467061&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="morchella esculenta ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Morchella esculenta</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/58682" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=58682&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="pleurotus ostreatus ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Pleurotus ostreatus</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/48494" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=48494&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="verpa bohemica ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Verpa bohemica</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/126131" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=126131&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+<section class="cat" data-category="Mamíferos y cetáceos">
+  <header class="cat-head" style="--cat-color: #495057">
+    <span class="cat-emoji">🦊</span>
+    <h2>Mamíferos y cetáceos</h2>
+    <span class="cat-stats">11 sp · 145 obs</span>
+    <span class="cat-toggle">▾</span>
+  </header>
+  <div class="cat-body"><div class="sp" data-search="rupicapra pyrenaica pyrenean chamois">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Rupicapra pyrenaica</span>
+      <span class="com">Pyrenean Chamois</span>
+    </div>
+    <div class="badge badge-high">92</div>
+  </div>
+  <div class="last">📅 hace 8 d · 2026-04-28 <span class="place">· 33554, Asturias, Espanha</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.2271023,-4.79267" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/358979019" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/42346" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=42346&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="capreolus capreolus western roe deer">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Capreolus capreolus</span>
+      <span class="com">Western Roe Deer</span>
+    </div>
+    <div class="badge badge-mid">19</div>
+  </div>
+  <div class="last">📅 hace 8 m · 2025-09-03 <span class="place">· [TURANCIAS|Turanzas] Turancias [CTA 03795], 33594 Llanes, Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.4147206082,-4.8751945049" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/311554580" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/42184" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=42184&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="vulpes vulpes red fox">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Vulpes vulpes</span>
+      <span class="com">Red Fox</span>
+    </div>
+    <div class="badge badge-mid">8</div>
+  </div>
+  <div class="last">📅 hace 2 a · 2024-02-07 <span class="place">· Lugar Turancias, Llanes, Asturias, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.4202672764,-4.8897610051" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/198637723" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/42069" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=42069&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="sciurus vulgaris iberian red squirrel">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Sciurus vulgaris</span>
+      <span class="com">Iberian Red Squirrel</span>
+    </div>
+    <div class="badge badge-mid">7</div>
+  </div>
+  <div class="last">📅 hace 1 m · 2026-04-05 <span class="place">· Barrio Roiz el Mazo, Valdáliga, Cantabria, ES</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.32185514,-4.3379597318" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/348325552" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/46001" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=46001&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="lutra lutra eurasian otter">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Lutra lutra</span>
+      <span class="com">Eurasian Otter</span>
+    </div>
+    <div class="badge badge-mid">6</div>
+  </div>
+  <div class="last">📅 hace 1 m · 2026-03-27 <span class="place">· Estación de Autobuses de Llanes, Llanes, 33500 Llanes, Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.4140172492,-4.7558801249" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/345642454" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/41850" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=41850&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="meles meles european badger">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Meles meles</span>
+      <span class="com">European Badger</span>
+    </div>
+    <div class="badge badge-mid">6</div>
+  </div>
+  <div class="last">📅 hace 1 m · 2026-04-05 <span class="place">· Llanes, Llanes, 33500 Llanes, Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.4132101298,-4.745904319" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/347598602" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/855297" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=855297&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="sus scrofa wild boar">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Sus scrofa</span>
+      <span class="com">Wild Boar</span>
+    </div>
+    <div class="badge badge-mid">5</div>
+  </div>
+  <div class="last">📅 hace 9 d · 2026-04-27 <span class="place">· 33554, Asturias, Spanje</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3051661,-4.7701567" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/356185393" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/42134" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=42134&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="delphinus delphis common dolphin">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Delphinus delphis</span>
+      <span class="com">Common Dolphin</span>
+    </div>
+    <div class="badge badge-low">1</div>
+  </div>
+  <div class="last">📅 hace 5 a · 2020-08-11 <span class="place">· Spain</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.5344550266,-4.7947866689" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/62059060" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/41526" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=41526&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="genetta genetta northern small-spotted genet">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Genetta genetta</span>
+      <span class="com">Northern Small-spotted Genet</span>
+    </div>
+    <div class="badge badge-low">1</div>
+  </div>
+  <div class="last">📅 hace 11 m · 2025-05-14 <span class="place">· Asturias, España</span></div>
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=43.3783071241,-4.5255690164" target="_blank">📍 Maps</a><a class="btn" href="https://www.inaturalist.org/observations/284546165" target="_blank">obs</a><a class="btn" href="https://www.inaturalist.org/taxa/925661" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=925661&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="eliomys quercinus ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Eliomys quercinus</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/45863" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=45863&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div><div class="sp" data-search="tursiops truncatus ">
+  <div class="sp-head">
+    <div class="sp-name">
+      <span class="sci">Tursiops truncatus</span>
+      
+    </div>
+    <div class="badge badge-zero">0</div>
+  </div>
+  
+  <div class="actions"><a class="btn" href="https://www.inaturalist.org/taxa/41482" target="_blank">iNat</a><a class="btn" href="https://www.inaturalist.org/observations?taxon_id=41482&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map" target="_blank">mapa</a></div>
+</div></div>
+</section>
+  </div>
+
+  <footer>
+    <p>Datos de <a href="https://www.inaturalist.org">iNaturalist</a> · 89 especies, 1985 observaciones acumuladas en el radio.</p>
+    <p><a href="index.html">← volver al inicio</a> · <a href="mapa-observaciones.html">🗺️ ver en mapa</a></p>
+  </footer>
+</div>
+
+<script>
+const data = [{"category": "Flora — Endemismos cantábricos", "species": "Petrocoptis pyrenaica", "common": "", "taxon_id": 953468, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=953468&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Endemismos cantábricos", "species": "Soldanella villosa", "common": "", "taxon_id": 443819, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=443819&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Endemismos cantábricos", "species": "Genista legionensis", "common": "", "taxon_id": 1499177, "total": 19, "last_obs_on": "2026-04-27", "last_place": "33554, Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/355394288", "last_coords": [43.2398861111, -4.7426555556], "map_url": "https://www.inaturalist.org/observations?taxon_id=1499177&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Endemismos cantábricos", "species": "Iris latifolia", "common": "English Iris", "taxon_id": 243782, "total": 8, "last_obs_on": "2025-07-03", "last_place": "33554 Tresviso, Cantabria, Španělsko", "last_obs_url": "https://www.inaturalist.org/observations/295671328", "last_coords": [43.2327647862, -4.7698117622], "map_url": "https://www.inaturalist.org/observations?taxon_id=243782&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Endemismos cantábricos", "species": "Armeria pubigera", "common": "", "taxon_id": 906543, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=906543&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Endemismos cantábricos", "species": "Daboecia cantabrica", "common": "St. Dabeoc's heath", "taxon_id": 371651, "total": 121, "last_obs_on": "2026-04-27", "last_place": "San pelayo s/n, 39587, Cantabria, Espanha", "last_obs_url": "https://www.inaturalist.org/observations/355677288", "last_coords": [43.1498946012, -4.6540138498], "map_url": "https://www.inaturalist.org/observations?taxon_id=371651&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Orchis mascula", "common": "Early Purple Orchid", "taxon_id": 132621, "total": 64, "last_obs_on": "2026-04-27", "last_place": "33554, Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/355414373", "last_coords": [43.2312666667, -4.7367222222], "map_url": "https://www.inaturalist.org/observations?taxon_id=132621&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Anacamptis morio", "common": "green-winged orchid", "taxon_id": 59318, "total": 4, "last_obs_on": "2024-05-08", "last_place": "39553, Cantabria, España", "last_obs_url": "https://www.inaturalist.org/observations/214607204", "last_coords": [43.28025, -4.4299444444], "map_url": "https://www.inaturalist.org/observations?taxon_id=59318&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Serapias lingua", "common": "Tongue Orchid", "taxon_id": 203000, "total": 21, "last_obs_on": "2025-06-02", "last_place": "33554 Tresviso, Cantabria, Spain", "last_obs_url": "https://www.inaturalist.org/observations/286310177", "last_coords": [43.255581873, -4.6684773266], "map_url": "https://www.inaturalist.org/observations?taxon_id=203000&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Serapias cordigera", "common": "Heart-flowered serapias", "taxon_id": 341172, "total": 69, "last_obs_on": "2026-04-30", "last_place": "praia", "last_obs_url": "https://www.inaturalist.org/observations/358987714", "last_coords": [43.4162640021, -4.7784767698], "map_url": "https://www.inaturalist.org/observations?taxon_id=341172&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Serapias parviflora", "common": "Lesser Tongue-orchid", "taxon_id": 243620, "total": 3, "last_obs_on": "2025-05-18", "last_place": "Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/282329088", "last_coords": [43.2879002519, -4.6254820162], "map_url": "https://www.inaturalist.org/observations?taxon_id=243620&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Ophrys apifera", "common": "Bee Orchid", "taxon_id": 83816, "total": 61, "last_obs_on": "2025-07-05", "last_place": "El Parque Nacional de los Picos de Europa, Cabrales, Asturias, ES", "last_obs_url": "https://www.inaturalist.org/observations/295625154", "last_coords": [43.2381151209, -4.8237947549], "map_url": "https://www.inaturalist.org/observations?taxon_id=83816&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Ophrys insectifera", "common": "", "taxon_id": 57468, "total": 15, "last_obs_on": "2025-05-31", "last_place": "Spain", "last_obs_url": "https://www.inaturalist.org/observations/286239518", "last_coords": [43.2972225638, -4.6215059672], "map_url": "https://www.inaturalist.org/observations?taxon_id=57468&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Ophrys lutea", "common": "Yellow Bee-orchid", "taxon_id": 59339, "total": 1, "last_obs_on": "2023-05-08", "last_place": "Principado de Asturias, ES-AS-AS, ES", "last_obs_url": "https://www.inaturalist.org/observations/249404523", "last_coords": [43.2525258628, -4.7567829116], "map_url": "https://www.inaturalist.org/observations?taxon_id=59339&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Cephalanthera longifolia", "common": "Narrow-leaved Helleborine", "taxon_id": 57470, "total": 9, "last_obs_on": "2025-05-24", "last_place": "Parque Nacional Picos de Europa, Cabrales, Asturies, ES", "last_obs_url": "https://www.inaturalist.org/observations/283712988", "last_coords": [43.231225, -4.7586866667], "map_url": "https://www.inaturalist.org/observations?taxon_id=57470&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Dactylorhiza elata", "common": "Robust Marsh-orchid", "taxon_id": 209319, "total": 10, "last_obs_on": "2025-06-10", "last_place": "Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/302312775", "last_coords": [43.3837845919, -4.6557952224], "map_url": "https://www.inaturalist.org/observations?taxon_id=209319&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Limodorum abortivum", "common": "Violet Bird's-nest", "taxon_id": 128137, "total": 8, "last_obs_on": "2025-05-18", "last_place": "Spain", "last_obs_url": "https://www.inaturalist.org/observations/282329062", "last_coords": [43.3439868843, -4.7802880695], "map_url": "https://www.inaturalist.org/observations?taxon_id=128137&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Orquídeas", "species": "Epipactis palustris", "common": "Marsh Helleborine", "taxon_id": 56233, "total": 3, "last_obs_on": "2024-07-21", "last_place": "Spain", "last_obs_url": "https://www.inaturalist.org/observations/230944541", "last_coords": [43.3324589342, -4.7283335344], "map_url": "https://www.inaturalist.org/observations?taxon_id=56233&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Plantas carnívoras", "species": "Pinguicula grandiflora", "common": "", "taxon_id": 325579, "total": 56, "last_obs_on": "2026-04-12", "last_place": "Camaleño, Cantabria, ES", "last_obs_url": "https://www.inaturalist.org/observations/349213291", "last_coords": [43.1774783333, -4.700825], "map_url": "https://www.inaturalist.org/observations?taxon_id=325579&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Plantas carnívoras", "species": "Drosera rotundifolia", "common": "round-leaved sundew", "taxon_id": 52658, "total": 17, "last_obs_on": "2025-07-27", "last_place": "Parque Nacional de la Montaña de Covadonga, Principado de Asturias, Asturias, Spain", "last_obs_url": "https://www.inaturalist.org/observations/302303995", "last_coords": [43.2874697997, -4.7126754], "map_url": "https://www.inaturalist.org/observations?taxon_id=52658&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Lirios y prado", "species": "Lilium pyrenaicum", "common": "Pyrenean Lily", "taxon_id": 207716, "total": 13, "last_obs_on": "2025-06-28", "last_place": "Parque Nacional de la Montaña de Covadonga, Principado de Asturias, Asturias, Spain", "last_obs_url": "https://www.inaturalist.org/observations/298090201", "last_coords": [43.2727781997, -4.6497], "map_url": "https://www.inaturalist.org/observations?taxon_id=207716&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Lirios y prado", "species": "Lilium martagon", "common": "Martagon Lily", "taxon_id": 85027, "total": 10, "last_obs_on": "2024-07-21", "last_place": "Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/230944524", "last_coords": [43.2298615214, -4.7484252201], "map_url": "https://www.inaturalist.org/observations?taxon_id=85027&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Lirios y prado", "species": "Aquilegia vulgaris", "common": "common columbine", "taxon_id": 51807, "total": 43, "last_obs_on": "2026-04-26", "last_place": "Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/354653350", "last_coords": [43.318477, -4.568822], "map_url": "https://www.inaturalist.org/observations?taxon_id=51807&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Lirios y prado", "species": "Digitalis purpurea", "common": "purple foxglove", "taxon_id": 53983, "total": 20, "last_obs_on": "2026-04-26", "last_place": "Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/354653370", "last_coords": [43.3172789722, -4.5685949722], "map_url": "https://www.inaturalist.org/observations?taxon_id=53983&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Costera", "species": "Crithmum maritimum", "common": "rock samphire", "taxon_id": 82602, "total": 101, "last_obs_on": "2026-03-31", "last_place": "Alfoz de Lloredo, Cantabria, ES", "last_obs_url": "https://www.inaturalist.org/observations/346392588", "last_coords": [43.3994633333, -4.1989366667], "map_url": "https://www.inaturalist.org/observations?taxon_id=82602&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Costera", "species": "Eryngium maritimum", "common": "Sea Holly", "taxon_id": 162707, "total": 3, "last_obs_on": "2025-08-24", "last_place": "Cantabria, España", "last_obs_url": "https://www.inaturalist.org/observations/309058158", "last_coords": [43.3898015109, -4.3832175366], "map_url": "https://www.inaturalist.org/observations?taxon_id=162707&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Costera", "species": "Honckenya peploides", "common": "Sea Sandwort", "taxon_id": 129446, "total": 7, "last_obs_on": "2025-10-15", "last_place": "Lugar Naves, Llanes, Asturias, ES", "last_obs_url": "https://www.inaturalist.org/observations/321394725", "last_coords": [43.4427833333, -4.876595], "map_url": "https://www.inaturalist.org/observations?taxon_id=129446&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Costera", "species": "Calystegia soldanella", "common": "Sea Bindweed", "taxon_id": 60880, "total": 3, "last_obs_on": "2025-06-20", "last_place": "Ribadedeva, Asturias, Espagne", "last_obs_url": "https://www.inaturalist.org/observations/291182288", "last_coords": [43.3914764549, -4.5789938048], "map_url": "https://www.inaturalist.org/observations?taxon_id=60880&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Flora — Costera", "species": "Pancratium maritimum", "common": "Sea Daffodil", "taxon_id": 78334, "total": 1, "last_obs_on": "2020-12-25", "last_place": "Playa de Oyambre, Cantabria, España", "last_obs_url": "https://www.inaturalist.org/observations/67256268", "last_coords": [43.3888247222, -4.3255163889], "map_url": "https://www.inaturalist.org/observations?taxon_id=78334&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — estivales y bosque", "species": "Oriolus oriolus", "common": "", "taxon_id": 204556, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=204556&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — estivales y bosque", "species": "Upupa epops", "common": "Common Hoopoe", "taxon_id": 20969, "total": 2, "last_obs_on": "2023-08-19", "last_place": "39547 San Vicente de la Barquera, Cantabria, España", "last_obs_url": "https://www.inaturalist.org/observations/179139640", "last_coords": [43.3939399717, -4.3369092939], "map_url": "https://www.inaturalist.org/observations?taxon_id=20969&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — estivales y bosque", "species": "Cuculus canorus", "common": "Common Cuckoo", "taxon_id": 1907, "total": 3, "last_obs_on": "2022-07-08", "last_place": "Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/141874115", "last_coords": [43.3603029387, -4.848159148], "map_url": "https://www.inaturalist.org/observations?taxon_id=1907&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — estivales y bosque", "species": "Pernis apivorus", "common": "European Honey-buzzard", "taxon_id": 5325, "total": 5, "last_obs_on": "2024-08-10", "last_place": "Peñarrubia, Cantabria, Espanha", "last_obs_url": "https://www.inaturalist.org/observations/236394020", "last_coords": [43.2367666667, -4.5525966667], "map_url": "https://www.inaturalist.org/observations?taxon_id=5325&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — estivales y bosque", "species": "Lanius collurio", "common": "Red-backed Shrike", "taxon_id": 12038, "total": 8, "last_obs_on": "2025-07-18", "last_place": "Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/317727004", "last_coords": [43.3939174629, -4.6143829457], "map_url": "https://www.inaturalist.org/observations?taxon_id=12038&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — estivales y bosque", "species": "Ficedula hypoleuca", "common": "European Pied Flycatcher", "taxon_id": 204512, "total": 11, "last_obs_on": "2025-09-15", "last_place": "Comillas, Cantabria, España", "last_obs_url": "https://www.inaturalist.org/observations/314634384", "last_coords": [43.3865433275, -4.2923223227], "map_url": "https://www.inaturalist.org/observations?taxon_id=204512&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — estivales y bosque", "species": "Dendrocoptes medius", "common": "Middle Spotted Woodpecker", "taxon_id": 792985, "total": 4, "last_obs_on": "2024-06-28", "last_place": "Cantabria, Spain", "last_obs_url": "https://www.inaturalist.org/observations/226174368", "last_coords": [43.1537665834, -4.558528971], "map_url": "https://www.inaturalist.org/observations?taxon_id=792985&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — estivales y bosque", "species": "Dryocopus martius", "common": "Black Woodpecker", "taxon_id": 17835, "total": 4, "last_obs_on": "2026-01-10", "last_place": "39592 La Plaza, Cantabria, Spanje", "last_obs_url": "https://www.inaturalist.org/observations/334218028", "last_coords": [43.3088361255, -4.317500554], "map_url": "https://www.inaturalist.org/observations?taxon_id=17835&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — marismas / costa", "species": "Platalea leucorodia", "common": "Eurasian Spoonbill", "taxon_id": 3731, "total": 5, "last_obs_on": "2023-12-22", "last_place": "Cantabria, Spain", "last_obs_url": "https://www.inaturalist.org/observations/194666375", "last_coords": [43.3862824424, -4.3999780656], "map_url": "https://www.inaturalist.org/observations?taxon_id=3731&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — marismas / costa", "species": "Ardea purpurea", "common": "", "taxon_id": 4951, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=4951&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — marismas / costa", "species": "Falco peregrinus", "common": "Peregrine Falcon", "taxon_id": 4647, "total": 5, "last_obs_on": "2024-06-26", "last_place": "Llanes, Asturias, Spain", "last_obs_url": "https://www.inaturalist.org/observations/226192066", "last_coords": [43.4249776294, -4.7573338785], "map_url": "https://www.inaturalist.org/observations?taxon_id=4647&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — marismas / costa", "species": "Gulosus aristotelis", "common": "European Shag", "taxon_id": 1289604, "total": 23, "last_obs_on": "2025-11-02", "last_place": "39540 San Vicente de la Barquera, Cantabria, Spanien", "last_obs_url": "https://www.inaturalist.org/observations/324525844", "last_coords": [43.3861344, -4.3981007997], "map_url": "https://www.inaturalist.org/observations?taxon_id=1289604&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — marismas / costa", "species": "Alcedo atthis", "common": "Common Kingfisher", "taxon_id": 2599, "total": 7, "last_obs_on": "2026-01-06", "last_place": "Ribadedeva, Asturias, Spain", "last_obs_url": "https://www.inaturalist.org/observations/333744291", "last_coords": [43.3918285099, -4.5794484392], "map_url": "https://www.inaturalist.org/observations?taxon_id=2599&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — alta montaña", "species": "Tichodroma muraria", "common": "Wallcreeper", "taxon_id": 14840, "total": 2, "last_obs_on": "2023-04-27", "last_place": "Cantabria, España", "last_obs_url": "https://www.inaturalist.org/observations/171257373", "last_coords": [43.240576052, -4.5735812187], "map_url": "https://www.inaturalist.org/observations?taxon_id=14840&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — alta montaña", "species": "Monticola saxatilis", "common": "Rufous-tailed Rock-Thrush", "taxon_id": 13140, "total": 4, "last_obs_on": "2024-08-09", "last_place": "Cantabria, Spanje", "last_obs_url": "https://www.inaturalist.org/observations/235684474", "last_coords": [43.1411673075, -4.5908675594], "map_url": "https://www.inaturalist.org/observations?taxon_id=13140&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — alta montaña", "species": "Pyrrhocorax pyrrhocorax", "common": "Red-billed Chough", "taxon_id": 8349, "total": 47, "last_obs_on": "2026-03-31", "last_place": "Llanes, Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/348069201", "last_coords": [43.4253159048, -4.758077699], "map_url": "https://www.inaturalist.org/observations?taxon_id=8349&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — alta montaña", "species": "Pyrrhocorax graculus", "common": "Yellow-billed Chough", "taxon_id": 8350, "total": 19, "last_obs_on": "2025-10-16", "last_place": "Asturias, Espagne", "last_obs_url": "https://www.inaturalist.org/observations/339545311", "last_coords": [43.2141647777, -4.815696347], "map_url": "https://www.inaturalist.org/observations?taxon_id=8350&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — alta montaña", "species": "Gyps fulvus", "common": "Eurasian Griffon", "taxon_id": 5366, "total": 165, "last_obs_on": "2026-04-02", "last_place": "39570 Potes, Cantabria, España", "last_obs_url": "https://www.inaturalist.org/observations/346849823", "last_coords": [43.1568256195, -4.6214964241], "map_url": "https://www.inaturalist.org/observations?taxon_id=5366&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — alta montaña", "species": "Neophron percnopterus", "common": "Egyptian Vulture", "taxon_id": 5361, "total": 32, "last_obs_on": "2025-08-25", "last_place": "Principado de Asturias, ES-AS-AS, ES", "last_obs_url": "https://www.inaturalist.org/observations/309739861", "last_coords": [43.3743686148, -4.8544701094], "map_url": "https://www.inaturalist.org/observations?taxon_id=5361&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — alta montaña", "species": "Aquila chrysaetos", "common": "Golden Eagle", "taxon_id": 5074, "total": 3, "last_obs_on": "2025-02-28", "last_place": "Parque Nacional de la Montaña de Covadonga, Principado de Asturias, Asturias, Spain", "last_obs_url": "https://www.inaturalist.org/observations/268203402", "last_coords": [43.234775, -4.817175], "map_url": "https://www.inaturalist.org/observations?taxon_id=5074&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Aves — alta montaña", "species": "Gypaetus barbatus", "common": "Eurasian Bearded Vulture", "taxon_id": 5379, "total": 13, "last_obs_on": "2026-04-28", "last_place": "33554, Asturias, Espanha", "last_obs_url": "https://www.inaturalist.org/observations/358975013", "last_coords": [43.2271023, -4.79267], "map_url": "https://www.inaturalist.org/observations?taxon_id=5379&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mariposas", "species": "Iphiclides feisthamelii", "common": "Iberian Scarce Swallowtail", "taxon_id": 130391, "total": 16, "last_obs_on": "2026-04-26", "last_place": "Barrio Turieno, Camaleño, Cantabria, ES", "last_obs_url": "https://www.inaturalist.org/observations/354004001", "last_coords": [43.1548388333, -4.633895], "map_url": "https://www.inaturalist.org/observations?taxon_id=130391&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mariposas", "species": "Anthocharis cardamines", "common": "orange-tip", "taxon_id": 51495, "total": 9, "last_obs_on": "2026-04-29", "last_place": "Tresviso, Cantabria, Espanha", "last_obs_url": "https://www.inaturalist.org/observations/357630579", "last_coords": [43.2661230738, -4.6342815086], "map_url": "https://www.inaturalist.org/observations?taxon_id=51495&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mariposas", "species": "Papilio machaon", "common": "Old World Swallowtail", "taxon_id": 56529, "total": 24, "last_obs_on": "2026-04-28", "last_place": "33554, Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/356167638", "last_coords": [43.2118527778, -4.7621277778], "map_url": "https://www.inaturalist.org/observations?taxon_id=56529&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mariposas", "species": "Aglais io", "common": "European Peacock Butterfly", "taxon_id": 207977, "total": 29, "last_obs_on": "2026-05-03", "last_place": "Cobijón, Udías, Cantabria, ES", "last_obs_url": "https://www.inaturalist.org/observations/358029901", "last_coords": [43.3394866667, -4.2401966667], "map_url": "https://www.inaturalist.org/observations?taxon_id=207977&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mariposas", "species": "Issoria lathonia", "common": "Queen of Spain Fritillary", "taxon_id": 62766, "total": 7, "last_obs_on": "2025-07-15", "last_place": "Puente La Jaya, Río Cares, 33554, Asturias, Spain", "last_obs_url": "https://www.inaturalist.org/observations/298175433", "last_coords": [43.2528782186, -4.8399408907], "map_url": "https://www.inaturalist.org/observations?taxon_id=62766&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mariposas", "species": "Polyommatus icarus", "common": "Common Blue", "taxon_id": 55641, "total": 21, "last_obs_on": "2026-04-06", "last_place": "Cantabria, España", "last_obs_url": "https://www.inaturalist.org/observations/348173416", "last_coords": [43.4030897824, -4.352256542], "map_url": "https://www.inaturalist.org/observations?taxon_id=55641&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mariposas", "species": "Pieris napi", "common": "Green-veined White", "taxon_id": 54087, "total": 16, "last_obs_on": "2025-07-10", "last_place": "33554 Tresviso, Cantabria, Spain", "last_obs_url": "https://www.inaturalist.org/observations/296952190", "last_coords": [43.2328906029, -4.8106444627], "map_url": "https://www.inaturalist.org/observations?taxon_id=54087&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Chioglossa lusitanica", "common": "Gold-striped salamander", "taxon_id": 27844, "total": 22, "last_obs_on": "2026-03-28", "last_place": "Spain", "last_obs_url": "https://www.inaturalist.org/observations/345852181", "last_coords": [43.3038884788, -4.7314028711], "map_url": "https://www.inaturalist.org/observations?taxon_id=27844&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Salamandra salamandra", "common": "Fire Salamander", "taxon_id": 27726, "total": 75, "last_obs_on": "2026-05-02", "last_place": "33554, Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/358610971", "last_coords": [43.2148446339, -4.8028942198], "map_url": "https://www.inaturalist.org/observations?taxon_id=27726&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Triturus marmoratus", "common": "Marbled Newt", "taxon_id": 27712, "total": 6, "last_obs_on": "2026-03-12", "last_place": "Potes, Cantabria, ES", "last_obs_url": "https://www.inaturalist.org/observations/342580014", "last_coords": [43.1709416667, -4.6266033333], "map_url": "https://www.inaturalist.org/observations?taxon_id=27712&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Lissotriton helveticus", "common": "Palmate Newt", "taxon_id": 64377, "total": 75, "last_obs_on": "2026-04-28", "last_place": "33554, Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/356175356", "last_coords": [43.2062972222, -4.7671416667], "map_url": "https://www.inaturalist.org/observations?taxon_id=64377&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Alytes obstetricans", "common": "Common Midwife Toad", "taxon_id": 24473, "total": 54, "last_obs_on": "2026-04-29", "last_place": "39580 Bejes, Cantabria, Espanha", "last_obs_url": "https://www.inaturalist.org/observations/357617973", "last_coords": [43.2422609653, -4.6466495097], "map_url": "https://www.inaturalist.org/observations?taxon_id=24473&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Discoglossus galganoi", "common": "", "taxon_id": 24480, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=24480&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Rana iberica", "common": "Iberian Frog", "taxon_id": 25665, "total": 5, "last_obs_on": "2026-04-03", "last_place": "Principado de Asturias, ES-AS-AS, ES", "last_obs_url": "https://www.inaturalist.org/observations/347123916", "last_coords": [43.3848635509, -4.8216191565], "map_url": "https://www.inaturalist.org/observations?taxon_id=25665&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Hyla molleri", "common": "Iberian Tree Frog", "taxon_id": 70646, "total": 2, "last_obs_on": "2024-08-08", "last_place": "Pimiango, 33590 Ribadedeva, Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/316794595", "last_coords": [43.3880861111, -4.5410916667], "map_url": "https://www.inaturalist.org/observations?taxon_id=70646&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Lacerta schreiberi", "common": "Iberian Emerald Lizard", "taxon_id": 35868, "total": 18, "last_obs_on": "2026-03-29", "last_place": "[LLANES] Estación Bus Llanes [CTA 03547], Llanes, 33500 Llanes, Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/345996257", "last_coords": [43.410157884, -4.7159671783], "map_url": "https://www.inaturalist.org/observations?taxon_id=35868&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Podarcis muralis", "common": "Common Wall Lizard", "taxon_id": 55990, "total": 310, "last_obs_on": "2026-05-06", "last_place": "Parque Nacional de la Montaña de Covadonga, ES-AS, ES-AS-AS, ES", "last_obs_url": "https://www.inaturalist.org/observations/358974562", "last_coords": [43.2353828284, -4.8195445154], "map_url": "https://www.inaturalist.org/observations?taxon_id=55990&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Podarcis bocagei", "common": "", "taxon_id": 35706, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=35706&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Anguis fragilis", "common": "Common Slowworm", "taxon_id": 343021, "total": 39, "last_obs_on": "2026-04-26", "last_place": "Cantabria, España", "last_obs_url": "https://www.inaturalist.org/observations/356441574", "last_coords": [43.2071126204, -4.6024372728], "map_url": "https://www.inaturalist.org/observations?taxon_id=343021&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Natrix maura", "common": "Viperine Snake", "taxon_id": 29351, "total": 5, "last_obs_on": "2025-08-12", "last_place": "39570 Potes, Cantabria, Espagne", "last_obs_url": "https://www.inaturalist.org/observations/305753684", "last_coords": [43.1538781311, -4.6236884594], "map_url": "https://www.inaturalist.org/observations?taxon_id=29351&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Natrix astreptophora", "common": "Iberian Grass Snake", "taxon_id": 966781, "total": 16, "last_obs_on": "2026-04-26", "last_place": "Cantabria, España", "last_obs_url": "https://www.inaturalist.org/observations/356428288", "last_coords": [43.1553041991, -4.6365640246], "map_url": "https://www.inaturalist.org/observations?taxon_id=966781&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Anfibios y reptiles", "species": "Vipera seoanei", "common": "Seoane's Viper", "taxon_id": 30917, "total": 39, "last_obs_on": "2026-04-26", "last_place": "Principado de Asturias, ES-AS-AS, ES", "last_obs_url": "https://www.inaturalist.org/observations/354716200", "last_coords": [43.2571549052, -4.8549103713], "map_url": "https://www.inaturalist.org/observations?taxon_id=30917&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Hongos primaverales", "species": "Morchella esculenta", "common": "", "taxon_id": 58682, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=58682&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Hongos primaverales", "species": "Morchella elata", "common": "", "taxon_id": 1467061, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=1467061&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Hongos primaverales", "species": "Calocybe gambosa", "common": "", "taxon_id": 450829, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=450829&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Hongos primaverales", "species": "Pleurotus ostreatus", "common": "", "taxon_id": 48494, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=48494&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Hongos primaverales", "species": "Verpa bohemica", "common": "", "taxon_id": 126131, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=126131&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Hongos primaverales", "species": "Gyromitra esculenta", "common": "", "taxon_id": 85120, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=85120&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mamíferos y cetáceos", "species": "Capreolus capreolus", "common": "Western Roe Deer", "taxon_id": 42184, "total": 19, "last_obs_on": "2025-09-03", "last_place": "[TURANCIAS|Turanzas] Turancias [CTA 03795], 33594 Llanes, Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/311554580", "last_coords": [43.4147206082, -4.8751945049], "map_url": "https://www.inaturalist.org/observations?taxon_id=42184&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mamíferos y cetáceos", "species": "Vulpes vulpes", "common": "Red Fox", "taxon_id": 42069, "total": 8, "last_obs_on": "2024-02-07", "last_place": "Lugar Turancias, Llanes, Asturias, ES", "last_obs_url": "https://www.inaturalist.org/observations/198637723", "last_coords": [43.4202672764, -4.8897610051], "map_url": "https://www.inaturalist.org/observations?taxon_id=42069&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mamíferos y cetáceos", "species": "Sciurus vulgaris", "common": "Iberian Red Squirrel", "taxon_id": 46001, "total": 7, "last_obs_on": "2026-04-05", "last_place": "Barrio Roiz el Mazo, Valdáliga, Cantabria, ES", "last_obs_url": "https://www.inaturalist.org/observations/348325552", "last_coords": [43.32185514, -4.3379597318], "map_url": "https://www.inaturalist.org/observations?taxon_id=46001&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mamíferos y cetáceos", "species": "Sus scrofa", "common": "Wild Boar", "taxon_id": 42134, "total": 5, "last_obs_on": "2026-04-27", "last_place": "33554, Asturias, Spanje", "last_obs_url": "https://www.inaturalist.org/observations/356185393", "last_coords": [43.3051661, -4.7701567], "map_url": "https://www.inaturalist.org/observations?taxon_id=42134&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mamíferos y cetáceos", "species": "Meles meles", "common": "European Badger", "taxon_id": 855297, "total": 6, "last_obs_on": "2026-04-05", "last_place": "Llanes, Llanes, 33500 Llanes, Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/347598602", "last_coords": [43.4132101298, -4.745904319], "map_url": "https://www.inaturalist.org/observations?taxon_id=855297&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mamíferos y cetáceos", "species": "Genetta genetta", "common": "Northern Small-spotted Genet", "taxon_id": 925661, "total": 1, "last_obs_on": "2025-05-14", "last_place": "Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/284546165", "last_coords": [43.3783071241, -4.5255690164], "map_url": "https://www.inaturalist.org/observations?taxon_id=925661&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mamíferos y cetáceos", "species": "Lutra lutra", "common": "Eurasian Otter", "taxon_id": 41850, "total": 6, "last_obs_on": "2026-03-27", "last_place": "Estación de Autobuses de Llanes, Llanes, 33500 Llanes, Asturias, España", "last_obs_url": "https://www.inaturalist.org/observations/345642454", "last_coords": [43.4140172492, -4.7558801249], "map_url": "https://www.inaturalist.org/observations?taxon_id=41850&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mamíferos y cetáceos", "species": "Eliomys quercinus", "common": "", "taxon_id": 45863, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=45863&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mamíferos y cetáceos", "species": "Rupicapra pyrenaica", "common": "Pyrenean Chamois", "taxon_id": 42346, "total": 92, "last_obs_on": "2026-04-28", "last_place": "33554, Asturias, Espanha", "last_obs_url": "https://www.inaturalist.org/observations/358979019", "last_coords": [43.2271023, -4.79267], "map_url": "https://www.inaturalist.org/observations?taxon_id=42346&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mamíferos y cetáceos", "species": "Tursiops truncatus", "common": "", "taxon_id": 41482, "total": 0, "last_obs_on": "", "last_place": "", "last_obs_url": "", "last_coords": null, "map_url": "https://www.inaturalist.org/observations?taxon_id=41482&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}, {"category": "Mamíferos y cetáceos", "species": "Delphinus delphis", "common": "Common Dolphin", "taxon_id": 41526, "total": 1, "last_obs_on": "2020-08-11", "last_place": "Spain", "last_obs_url": "https://www.inaturalist.org/observations/62059060", "last_coords": [43.5344550266, -4.7947866689], "map_url": "https://www.inaturalist.org/observations?taxon_id=41526&lat=43.385&lng=-4.53&radius=30&quality_grade=research&view=map"}];
+
+// Toggle de secciones (clic en el header)
+document.querySelectorAll('.cat-head').forEach(h => {
+  h.addEventListener('click', () => h.parentElement.classList.toggle('collapsed'));
+});
+
+// Búsqueda en vivo
+const input = document.getElementById('search');
+const sections = document.querySelectorAll('.cat');
+function filter() {
+  const q = input.value.trim().toLowerCase();
+  if (!q) {
+    document.querySelectorAll('.sp').forEach(el => el.style.display = '');
+    sections.forEach(s => s.style.display = '');
+    return;
+  }
+  sections.forEach(section => {
+    let any = false;
+    section.querySelectorAll('.sp').forEach(el => {
+      const match = el.dataset.search.includes(q);
+      el.style.display = match ? '' : 'none';
+      if (match) any = true;
+    });
+    section.style.display = any ? '' : 'none';
+  });
+}
+input.addEventListener('input', filter);
+
+// Atajo: Esc limpia
+input.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { input.value = ''; filter(); input.blur(); }
+});
+</script>
+</body>
+</html>

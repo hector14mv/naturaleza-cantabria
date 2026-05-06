@@ -1,6 +1,6 @@
 # Observaciones cercanas — La Revilla
 
-_Generado: 2026-05-06 22:56  ·  centro 43.385,-4.53  ·  radio **30 km**  ·  calidad investigación únicamente._
+_Generado: 2026-05-06 23:51  ·  centro 43.385,-4.53  ·  radio **30 km**  ·  calidad investigación únicamente._
 _Excluyendo observaciones de: @hectormoyano, @sergiovelez._
 
 
