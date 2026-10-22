@@ -1,22 +1,24 @@
 # Naturaleza Cantabria
 
-Mapas interactivos de observaciones de fauna y flora alrededor de La Revilla (San Vicente de la Barquera, Cantabria), generados a partir de la API pública de [iNaturalist](https://www.inaturalist.org).
+Interactive maps of wildlife and plant sightings around La Revilla (San Vicente de la Barquera, Cantabria), built from the public [iNaturalist](https://www.inaturalist.org) API. The site itself is in Spanish.
 
-## 🌐 Sitio publicado
+**Live:** <https://hector14mv.github.io/naturaleza-cantabria/>
 
-→ **<https://hector14mv.github.io/naturaleza-cantabria/>**
+![Map of sightings within 30 km of La Revilla](docs/screenshot.jpg)
 
-## Contenido
+## What's inside
 
-- **`index.html`** — landing con enlaces a los mapas.
-- **`mapa-observaciones.html`** — mapa principal: 96 especies "joya" de mayo en radio 30 km desde La Revilla. Endemismos cantábricos, orquídeas, mariposas, herpetofauna, mamíferos.
-- **`mapa-ibio.html`** — mapa específico de las Antenas de Ibio (radio 5 km), con todas las observaciones de cualquier grupo agrupadas por tipo.
-- **`observaciones-cercanas.md`** — tabla con las 96 especies, número de observaciones y último avistamiento; cada fila enlaza a Google Maps.
+- **`index.html`**: landing page with links to the maps.
+- **`mapa-observaciones.html`**: the main map. 96 standout May species within 30 km of La Revilla: Cantabrian endemics, orchids, butterflies, reptiles and amphibians, mammals. Markers are coloured by group and clustered when they overlap, and a "Mi ubicación" button follows your position live.
+- **`mapa-ibio.html`**: every sighting of any group within 5 km of the Antenas de Ibio.
+- **`observaciones.html`** and **`observaciones-cercanas.md`**: a table of the 96 species with their number of sightings and the latest one; each row links to Google Maps.
 
-## Privacidad
+Plain HTML, CSS and JavaScript with [Leaflet](https://leafletjs.com) and OpenStreetMap tiles. No build step.
 
-Las observaciones de `@hectormoyano` y `@sergiovelez` están excluidas — el informe muestra qué han registrado **otros**, para complementar y no duplicar.
+## Privacy
 
-## Licencia datos
+Sightings by `@hectormoyano` and `@sergiovelez` are left out on purpose: the maps show what **other** people have recorded, to complement our own observations rather than repeat them.
 
-Los datos provienen de iNaturalist y respetan sus licencias originales (CC BY-NC en su mayoría). Tiles del mapa: © OpenStreetMap.
+## Data licence
+
+Data comes from iNaturalist and keeps its original licences (mostly CC BY-NC). Map tiles © OpenStreetMap contributors.
